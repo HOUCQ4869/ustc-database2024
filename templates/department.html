@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <meta charset="UTF-8">
+    <title>department manage</title>
+</head>
+
+
+
+<body>
+    <div class="header">
+        <h1 class="logo">department manage
+        </h1>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+        <ul class="nav">
+            <li><a href="/homepage">Return</a></li>
+            <li><a href="https://houcq4869.github.io/">My blog</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="https://github.com/HOUCQ4869">Github</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="left">
+            <h2>Add</h2><br>
+            <form method="post">
+                <label for="new_id">new_id:</label>
+                <input type="text" id="new_id" name="new_id" required>
+                <br>
+                <label for="new_name">new_name:</label>
+                <input type="text" id="new_name" name="new_name" required>
+                <br>
+                <label for="new_type">new_type:</label>
+                <input type="text" id="new_type" name="new_type" required>
+                <br>
+                <label for="new_director">new_director:</label>
+                <input type="text" id="new_director" name="new_director" required>
+                <br>
+                <label for="new_bank_name">new_bank_name:</label>
+                <input type="text" id="new_bank_name" name="new_bank_name" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="ADD" value="enter">
+                </p>
+            </form>
+
+        </div>
+        <div class="right">
+            <h2>Update</h2><br>
+            <form method="post">
+                <label for="old_id">old_id:</label>
+                <input type="text" id="old_id" name="old_id" required>
+                <br>
+                <label for="new_id">new_id:</label>
+                <input type="text" id="new_id" name="new_id" required>
+                <br>
+                <label for="new_name">new_name:</label>
+                <input type="text" id="new_name" name="new_name" required>
+                <br>
+                <label for="new_type">new_type:</label>
+                <input type="text" id="new_type" name="new_type" required>
+                <br>
+                <label for="new_director">new_director:</label>
+                <input type="text" id="new_director" name="new_director" required>
+                <br>
+                <label for="new_bank_name">new_bank_name:</label>
+                <input type="text" id="new_bank_name" name="new_bank_name" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="UPDATE" value="enter">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="left">
+            <h2>Delete</h2><br>
+            <form id="deleteForm" method="post">
+                <label for="department_id">department_id</label>
+                <input type="text" id="department_id" name="department_id" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="DELETE" value="enter">
+                </p>
+            </form>
+        </div>
+
+        <div class="right">
+            <h2>Query</h2><br>
+            <form method="post">
+                <label for="department_id">department_id:</label>
+                <input type="text" id="department_id" name="department_id" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="QUERY_DEPARTMENT" value="enter">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <h2>Query result</h2>
+        <div class="wrap">
+            <div class="left">
+                {% for item in query_res %}
+                <h3>
+                    <p align="center">id: {{item[0]}}</p>
+                    <p align="center">name: {{item[1]}}</p>
+                    <p align="center">type: {{item[2]}}</p>
+                    <p align="center">director: {{item[3]}}</p>
+                    <p align="center">bank_name: {{item[4]}}</p>
+                </h3>
+                {% endfor %}
+            </div>
+            <div class="right">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2024 bank_system create by houcq</p>
+    </div>
+
+</body>
+
+</html>

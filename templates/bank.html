@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <meta charset="UTF-8">
+    <title>bank manage</title>
+</head>
+
+
+<body>
+    <div class="header">
+        <h1 class="logo">bank manage
+        </h1>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+        <ul class="nav">
+            <li><a href="/homepage">Return</a></li>
+            <li><a href="https://houcq4869.github.io/">My blog</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="https://github.com/HOUCQ4869">Github</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap">
+        <div class="left">
+            <h2>Add</h2>
+            <br>
+            <form method="post">
+                <label for="new_name">new_name:</label>
+                <input type="text" id="new_name" name="new_name" required>
+                <br>
+                <label for="new_address">new_address:</label>
+                <input type="text" id="new_address" name="new_address" required>
+                <br>
+                <label for="new_phone">new_phone:</label>
+                <input type="text" id="new_phone" name="new_phone" required>
+                <br>
+                <label for="new_asset">new_asset:</label>
+                <input type="text" id="new_asset" name="new_asset" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="ADD" value="enter">
+                </p>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Update</h2><br>
+            <form method="post">
+                <label for="old_name">old_name:</label>
+                <input type="text" id="old_name" name="old_name" required>
+                <br>
+                <label for="new_name">new_name:</label>
+                <input type="text" id="new_name" name="new_name" required>
+                <br>
+                <label for="new_address">new_address:</label>
+                <input type="text" id="new_address" name="new_address" required>
+                <br>
+                <label for="new_phone">new_phone:</label>
+                <input type="text" id="new_phone" name="new_phone" required>
+                <br>
+                <label for="new_asset">new_asset:</label>
+                <input type="text" id="new_asset" name="new_asset" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="UPDATE" value="enter">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="left">
+            <h2>Delete</h2><br>
+            <form id="deleteForm" method="post">
+                <label for="bank_name">bank_name:</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="DELETE" value="enter">
+                </p>
+            </form>
+        </div>
+
+        <div class="right">
+            <h2>Query</h2><br>
+            <h3>message</h3>
+            <form method="post">
+                <label for="bank_name">bank_name:</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="QUERY_BANK" value="enter">
+                </p>
+            </form>
+            <br>
+            <h3>asset</h3>
+            <form method="post">
+                <label for="bank_name">bank_name:</label>
+                <input type="text" id="bank_name" name="bank_name">
+                <br><br>
+                <p align="center">
+                    <input class="submit" type="submit" name="QUERY_ASSET" value="enter">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <h2>Query result</h2>
+        <div class="wrap">
+            <div class="left">
+                {% for item in query_res %}
+                <h3>
+                    <p align="center">name: {{item[0]}}</p>
+                    <p align="center">address: {{item[1]}}</p>
+                    <p align="center">phone: {{item[2]}}</p>
+                    <p align="center">asset: {{item[3]}}</p>
+                </h3>
+                {% endfor %}
+            </div>
+            <div class="right">
+                {% for item in asset_res %}
+                <h3>
+                    <p align="center">asset: {{item[0]}}</p>
+                </h3>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="footer">
+        <p>© 2024 bank_system create by houcq</p>
+    </div>
+</body>
+
+</html>

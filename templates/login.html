@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="logo">login
+        </h1>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+        <ul class="nav">
+            <li><a href="https://houcq4869.github.io/">My blog</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="https://github.com/HOUCQ4869">Github</a></li>
+        </ul>
+    </div>
+    <br>
+    <form method="post">
+
+        <h1>
+            <p align="center">Welcome to my bank_sys</p>
+        </h1>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <p align="center">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <br>
+            <br>
+            <input class="submit" type="submit" value="Log In">
+
+        </p>
+    </form>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="footer">
+        <p>© 2024 bank_system create by houcq</p>
+    </div>
+
+</body>
+
+</html>

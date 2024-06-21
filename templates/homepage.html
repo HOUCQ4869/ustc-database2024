@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1 class="logo">Welcome to bank_system
+        </h1>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
+        <ul class="nav">
+            <li><a href="https://houcq4869.github.io/">My blog</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="https://github.com/HOUCQ4869">Github</a></li>
+        </ul>
+    </div>
+
+
+    <form method="post" id="operations">
+        <div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/bank">bank manage</a></li>
+                </h1>
+            </div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/account">account manage</a></li>
+                </h1>
+            </div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/customer">customer manage</a></li>
+                </h1>
+            </div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/department">department manage</a></li>
+                </h1>
+            </div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/employee">employee manage</a></li>
+                </h1>
+            </div>
+            <div class="text">
+                <h1>
+                    <a href="/homepage/loan">loan manage</a></li>
+                </h1>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="footer">
+        <p>© 2024 bank_system create by houcq</p>
+    </div>
+
+</body>
+
+</html>
